@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Call Supabase Function
         run: |
-          curl -X POST https://lsnvuplejqfxlraksfda.supabase.co/functions/v1/reset-notes \
+          curl -X POST https://<project-id>.supabase.co/functions/v1/reset-notes \
           -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
