@@ -1,4 +1,3 @@
-# Trigger new run
 name: Call Supabase Function at Midnight
 
 on:
