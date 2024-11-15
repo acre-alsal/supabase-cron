@@ -1,13 +1,15 @@
-name: Test Workflow
+name: Call Supabase Function at Midnight
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
 
 jobs:
-  test:
+  call-supabase:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check Echo
-        run: echo "Hello, this is a test!"
+      - name: Call Supabase Function
+        run: |
+          curl -X POST "https://lsnvuplejqfxlraksfda.supabase.co/functions/v1/reset-notes" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
