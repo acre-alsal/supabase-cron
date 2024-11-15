@@ -3,7 +3,7 @@ name: Call Supabase Function at Midnight
 on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight UTC
-    workflow_dispatch: # Add this to enable manual runs
+workflow_dispatch: # Add this to enable manual runs
 
 jobs:
   call-supabase:
